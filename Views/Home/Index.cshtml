@@ -1,50 +1,192 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Awesome App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .gallery-container {
+            padding: 2rem 0;
+        }
+        .gallery-img {
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 15px;
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        .gallery-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .gallery-title {
+            border-bottom: 2px solid #0d6efd;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+        .card {
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+        }
+        .image-troubleshooting {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">My Awesome App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">My Awesome App</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero-section text-center rounded">
+            <h1 class="display-4">Welcome to GTR!</h1>
+            <p class="lead">Best Employee! 🚀</p>
+            <a href="#" class="btn btn-primary btn-lg mt-3">Get Started</a>
+        </div>
+
+        <!-- Image Gallery Section -->
+        <div class="gallery-container">
+            <h2 class="text-center gallery-title">Our Gallery</h2>
+            
+            <div class="row">
+                <!-- Image 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="~/images/image1.jpg" alt="Image 1" class="img-fluid rounded">
+                        <div class="card-body">
+                            <h5 class="card-title">Image 1</h5>
+                            <p class="card-text">This would be your first image from wwwroot/images/</p>
+                            <div class="text-center">
+                                <span class="badge bg-warning text-dark">Current path: /images/image1.jpg</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Image 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="~/images/image2.jpg" alt="Image 2" class="img-fluid rounded">
+                        <div class="card-body">
+                            <h5 class="card-title">Image 2</h5>
+                            <p class="card-text">This would be your second image from wwwroot/images/</p>
+                            <div class="text-center">
+                                <span class="badge bg-warning text-dark">Current path: /images/image2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Image 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="~/images/image3.jpg" alt="Image 3" class="img-fluid rounded">
+                        <div class="card-body">
+                            <h5 class="card-title">Image 3</h5>
+                            <p class="card-text">This would be your third image from wwwroot/images/</p>
+                            <div class="text-center">
+                                <span class="badge bg-warning text-dark">Current path: /images/image3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Troubleshooting Guide -->
+        <div class="image-troubleshooting">
+            <h3>Why aren't my images loading?</h3>
+            <p>Your images are not loading because the server can't find them at the specified paths. Here's how to fix it:</p>
+            
+            <ol>
+                <li><strong>Add file extensions</strong> - Rename your image files to include extensions (e.g., image1.jpg)</li>
+                <li><strong>Use the correct path</strong> - In ASP.NET Core, reference wwwroot files with <code>~/images/filename.jpg</code></li>
+                <li><strong>Check file permissions</strong> - Ensure the images are readable by the web server process</li>
+                <li><strong>Verify Static File Middleware</strong> - Make sure <code>app.UseStaticFiles()</code> is called in Startup.cs/Program.cs</li>
+            </ol>
+            
+            <div class="alert alert-info">
+                <strong>Quick test:</strong> Try accessing an image directly in your browser:<br>
+                <code>http://localhost:5141/images/image1.jpg</code><br>
+                If you get a 404, the file doesn't exist at that path.
+            </div>
+        </div>
+
+        <!-- Last Updated Section -->
+        <div class="text-center mt-5">
+            <p><strong>Last updated:</strong> <span id="currentDateTime"></span></p>
         </div>
     </div>
-</nav>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to My Awesome App!</h1>
-    <p>This app was deployed using Jenkins CI/CD pipeline! 🚀</p>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <!-- Footer -->
+    <footer class="mt-5 py-3 bg-dark text-white text-center">
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> My Awesome App. All rights reserved.</p>
+        </div>
+    </footer>
 
-    <h1> testing </h1>
-    <p><strong>Last updated:</strong> @DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss")</p>
-
-    <!-- Added Button -->
-    <a href="#" class="btn btn-primary mt-3">Get Started</a>
-</div>
-
-<!-- Footer -->
-<footer class="mt-5 py-3 bg-dark text-white text-center">
-    <div class="container">
-        <p>&copy; @DateTime.Now.Year My Awesome App. All rights reserved.</p>
-    </div>
-</footer>
-
-<!-- Bootstrap CSS for styling -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<!-- Bootstrap JS for navbar functionality -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS for navbar functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Update year and date/time
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                year: 'numeric', 
+                month: '2-digit', 
+                day: '2-digit',
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit',
+                hour12: false 
+            };
+            document.getElementById('currentDateTime').textContent = now.toLocaleString('en-US', options);
+        }
+        
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>
